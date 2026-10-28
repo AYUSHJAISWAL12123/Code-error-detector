@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Code Error Detector and Syntax Highlighter</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+<div class="wrap">
+  <h1>Code Error Detector &amp; Syntax Highlighter</h1>
+  <p class="sub">A mini compiler front-end: lexer → token classifier → syntax checks. Supports JavaScript, C and Python.</p>
+  <div class="bar">
+    <label>Language <select id="lang"><option value="js">JavaScript</option><option value="c">C</option><option value="py">Python</option></select></label>
+    <button id="sample">Load sample with errors</button>
+    <button id="clear">Clear</button>
+    <span class="sp"></span>
+    <button id="theme">Toggle theme</button>
+  </div>
+  <div class="grid">
+    <div class="card">
+      <div class="editor" id="editor">
+        <div class="gut" id="gut"></div>
+        <div class="code"><div class="hl" id="hl"><div class="in" id="in"></div></div>
+          <textarea id="ta" spellcheck="false" autocapitalize="off" autocomplete="off" wrap="off"></textarea></div>
+      </div>
+      <div class="status"><span id="pos">Ln 1, Col 1</span><span id="cnt"></span></div>
+    </div>
+    <div class="card">
+      <div class="tabs"><button class="tab on" data-t="prob">Problems</button><button class="tab" data-t="tok">Tokens</button></div>
+      <div id="prob" class="side"></div>
+      <div id="tok" class="side hide"></div>
+    </div>
+  </div>
+</div>
+<script src="script.js"></script>
+</body>
+</html>
